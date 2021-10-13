@@ -26,3 +26,8 @@ Defend_test: Defend.cpp Defend_driver.cpp
 Special_attack_test: Special_attack.cpp Special_attack_driver.cpp
 	clang++ Special_attack.cpp Special_attack_driver.cpp -o Special_attack_test
 	./Special_attack_test
+
+check_intro: main.cpp select_character.cpp Character.cpp
+	clang++ main.cpp select_character.cpp Character.cpp -o check_intro
+	./check_intro
+	
