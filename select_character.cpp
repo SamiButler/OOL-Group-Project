@@ -44,3 +44,4 @@ string select_character()
 
 	return character_name;
 }
+

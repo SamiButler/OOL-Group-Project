@@ -29,3 +29,4 @@ int Character::get_stun_counter()
 {
 	return stun_counter;
 }
+
