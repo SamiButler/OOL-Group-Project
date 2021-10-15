@@ -7,6 +7,7 @@ using namespace std;
 extern string select_character();
 extern int* generate_random_array();
 
+
 int main()				// So far use 'make check_intro' to test this.
 {
 	cout << endl << "THIS IS WHERE THE INTO MESSAGE WILL GO" << endl;

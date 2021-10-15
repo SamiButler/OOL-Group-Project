@@ -29,7 +29,7 @@ void Move::move_menu(){
 void Move::select_move(){
     int my_move;
     cin >> my_move >> endl;
-    while (my_move != 1 || my_move != 2 || my_move != 3 || my_move != 4 ||){
+    while (my_move != 1 && my_move != 2 && my_move != 3 && my_move != 4){
         cout << "Please enter a valid move" << endl;
         cin >> my_move >> endl;
     }
@@ -37,13 +37,13 @@ void Move::select_move(){
     if (my_move == 3 && heavy_recharge_time != 0){
         cout << "Heavy Attack is still recharging" << endl;
         my_move = 0;
-        goto 32;
+        goto 25;
     }
     
     if (my_move == 4 && special_recharge_time != 0){
         cout << "Special Attack is still recharging" << endl;
         my_move = 0;
-        goto 32;
+        goto 25;
     }
     
     move_type = my_move;
