@@ -37,13 +37,13 @@ void Move::select_move(){
     if (my_move == 3 && heavy_recharge_time != 0){
         cout << "Heavy Attack is still recharging" << endl;
         my_move = 0;
-        goto 25;
+        goto 32;
     }
     
     if (my_move == 4 && special_recharge_time != 0){
         cout << "Special Attack is still recharging" << endl;
         my_move = 0;
-        goto 25;
+        goto 32;
     }
     
     move_type = my_move;
