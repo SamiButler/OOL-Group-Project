@@ -29,7 +29,7 @@ void Move::move_menu(){
 void Move::select_move(){
     int my_move;
     cin >> my_move >> endl;
-    while (my_move != 1 || my_move != 2 || my_move != 3 || my_move != 4 ||){
+    while (my_move != 1 && my_move != 2 && my_move != 3 && my_move != 4){
         cout << "Please enter a valid move" << endl;
         cin >> my_move >> endl;
     }
