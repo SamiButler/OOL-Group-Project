@@ -27,8 +27,9 @@ Special_attack_test: Special_attack.cpp Special_attack_driver.cpp
 	clang++ Special_attack.cpp Special_attack_driver.cpp -o Special_attack_test
 	./Special_attack_test
 
-check_intro: main.cpp select_character.cpp Character.cpp generate_random_array.cpp check_input.cpp
-	clang++ main.cpp select_character.cpp check_input.cpp Character.cpp generate_random_array.cpp -o check_intro
+check_intro: main.cpp select_character.cpp Character.cpp generate_random_array.cpp check_input.cpp opponent_array.cpp
+	clear
+	clang++ main.cpp select_character.cpp check_input.cpp Character.cpp generate_random_array.cpp opponent_array.cpp -o check_intro
 	./check_intro
 	
 	
