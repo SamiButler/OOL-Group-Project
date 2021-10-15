@@ -26,7 +26,7 @@ Character* opponent_array(Character user, int* random_array)
 		
 		for (int i = 0; i < 4; i++)
 		{
-			temp_opponents[i] = Character(name_array[i], i);
+			temp_opponents[i] = Character(name_array[i], i+1);
 		}
 	}
 	else if (user.name == "Tony Montana")
@@ -41,7 +41,7 @@ Character* opponent_array(Character user, int* random_array)
 		
 		for (int i = 0; i < 4; i++)
 		{
-			temp_opponents[i] = Character(name_array[i], i);
+			temp_opponents[i] = Character(name_array[i], i+1);
 		}
 	}
 	else if (user.name == "Skinny Pete")
@@ -57,7 +57,7 @@ Character* opponent_array(Character user, int* random_array)
 		
 		for (int i = 0; i < 4; i++)
 		{
-			temp_opponents[i] = Character(name_array[i], i);
+			temp_opponents[i] = Character(name_array[i], i+1);
 		}
 	}
 	else if (user.name == "Dirty Harry")
@@ -70,7 +70,7 @@ Character* opponent_array(Character user, int* random_array)
 
 		for (int i = 0; i < 4; i++)
 		{
-			temp_opponents[i] = Character(name_array[i], i);
+			temp_opponents[i] = Character(name_array[i], i+1);
 		}
 	}
 	else if (user.name == "Chuck Norris")
@@ -82,7 +82,7 @@ Character* opponent_array(Character user, int* random_array)
 
 		for (int i = 0; i < 4; i++)
 		{
-			temp_opponents[i] = Character(name_array[i], i);
+			temp_opponents[i] = Character(name_array[i], i+1);
 		}
 	}
 
@@ -110,18 +110,13 @@ Character* opponent_array(Character user, int* random_array)
 	{
 		for (int j = 0; j < 4; j++)
 		{
-			if (temp_opponents[j].ID == i)
+			if (temp_opponents[j].ID == random_array[i])
 			{
 				opponents[i] = temp_opponents[j];
 			}
 		}
 	}
 
-	// Set ID numbers for each of the Character objects.
-	for (int i = 0; i < 4; i++)
-	{
-		opponents[i].ID = i + 1;
-	}
 
 	return opponents;
 }

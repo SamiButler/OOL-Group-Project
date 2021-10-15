@@ -7,13 +7,18 @@ using namespace std;
 extern string select_character();
 extern int* generate_random_array();
 extern Character* opponent_array(Character user, int* random_array);
+extern bool ready();
+extern bool next_round(Character User, Character Opponent);
 
 
 int main()				// So far use 'make check_intro' to test this.
 {
+	bool ready_to_continue = false;
+	bool victory = true;
+
 	cout << endl << "THIS IS WHERE THE INTO MESSAGE WILL GO" << endl;
 
-	cout << "Choose from the following characters:" << endl;
+	cout << "Choose from the following fighters:" << endl;
 
 	cout << endl << "1 Scott Pilgrim" << endl << "2 Tony Montana" << endl << "3 Skinny Pete" << endl << "4 Dirty Harry" << endl << "5 Chuck Norris" << endl << endl;	
 
@@ -28,15 +33,27 @@ int main()				// So far use 'make check_intro' to test this.
 	// This then helps create the opponents_array.
 	int* random_array = generate_random_array();
 	Character* opponents_array = opponent_array(User, random_array);
+	delete[] random_array;
 
-	for (int i = 0; i < 4; i++)
+	// Prompt user if ready to continue?
+	cout << "Now that you have selected your fighter, the game will be begin shortly. Enter 1 to proceed." << endl;
+	ready_to_continue = ready();
+
+
+	// This section is where the main stage of the game occurs: the
+	// fights against the other characters.
+	for (int match = 0; match < 4; match++)
 	{
-		cout << opponents_array[i].ID << " " << opponents_array[i].name << endl;
+		victory = next_round(User, opponents_array[match]);
+		if (victory == false)
+		{
+			cout << "Game over - you died!! Better luck next time." << endl;
+			return 0;
+		}
 	}
 
+	delete[] opponents_array;
 
-	// Delete dynamic arrays from heap and return 0 to exit.
 	cout << endl;
-	delete[] random_array;
 	return 0;
 }
