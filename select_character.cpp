@@ -15,6 +15,7 @@ string select_character()
 	cin >> user_input;
 	
 	while(check_input(user_input, 5) == false){
+		cout << "Choose from the corresponding numbers: ";
 		cin >> user_input;
 		
 	}
