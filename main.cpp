@@ -22,7 +22,7 @@ int main()				// So far use 'make check_intro' to test this.
 	Character User = Character(UserName, 0);
 
 	// Un-comment the line below is just testing checking hitpoints. This won't be in the final code.
-	// cout << UserName << " has " << User.get_hitpoints() << " hitpoints." << endl;
+	cout << UserName << " has " << User.get_hitpoints() << " hitpoints." << endl;
 
 	// Generate random number array that will correspond to
 	// the IDs and hence order that you fight the opponents in.

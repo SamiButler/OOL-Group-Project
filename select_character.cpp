@@ -21,13 +21,6 @@ string select_character()
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-
 	if (user_input == "1")
 	{
 		character_name = "Scott Pilgrim";
