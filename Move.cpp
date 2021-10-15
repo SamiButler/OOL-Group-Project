@@ -17,11 +17,11 @@ void Move::move_menu(){
     cout << "1: Light Attack" << endl;
     cout << "2: Defend" << endl;
     
-    if (heavy_rechrage_time == 0){
+    if (heavy_recharge_time == 0){
         cout << "3: Heavy Attack" << endl;
     }
     
-    if (special_rechrage_time == 0){
+    if (special_recharge_time == 0){
         cout << "4: Special Attack" << endl;
     }
 }
@@ -34,13 +34,13 @@ void Move::select_move(){
         cin >> my_move >> endl;
     }
     
-    if (my_move == 3 && heavy_attack_time != 0){
+    if (my_move == 3 && heavy_recharge_time != 0){
         cout << "Heavy Attack is still recharging" << endl;
         my_move = 0;
         goto 25;
     }
     
-    if (my_move == 4 && special_attack_time != 0){
+    if (my_move == 4 && special_recharge_time != 0){
         cout << "Special Attack is still recharging" << endl;
         my_move = 0;
         goto 25;
