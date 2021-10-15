@@ -12,13 +12,6 @@ public:
 	int ID;
 	int hitpoints;
 	int stun_counter;
-	int get_hitpoints();
-	int get_stun_counter();
-
-private:
-	int ID_array[4];
-	int ID_counter;
 };
 
 #endif
-

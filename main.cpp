@@ -31,7 +31,7 @@ int main()				// So far use 'make check_intro' to test this.
 
 	for (int i = 0; i < 4; i++)
 	{
-		cout << opponents_array[i].name << endl;
+		cout << opponents_array[i].ID << " " << opponents_array[i].name << endl;
 	}
 
 
@@ -40,4 +40,3 @@ int main()				// So far use 'make check_intro' to test this.
 	delete[] random_array;
 	return 0;
 }
-

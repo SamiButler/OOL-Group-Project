@@ -11,6 +11,7 @@ Character* opponent_array(Character user, int* random_array)
 	Character temp_opponents[4];
 	string all_names[5] = {"Scott Pilgrim", "Tony Montana", "Skinny Pete", "Dirty Harry", "Chuck Norris"};
 	string name_array[4];
+	string temp_name_array[4];
 	int count;
 
 	// The following if/else statements sort the character names into an array.
@@ -78,9 +79,12 @@ Character* opponent_array(Character user, int* random_array)
 		{
 			name_array[i] = all_names[i];
 		}
-	}
 
-	string temp_name_array[4];
+		for (int i = 0; i < 4; i++)
+		{
+			temp_opponents[i] = Character(name_array[i], i);
+		}
+	}
 
 	// Using the name_array, we now sort the characters into a temporary array
 	// using the randomly generated numbers.
@@ -113,8 +117,11 @@ Character* opponent_array(Character user, int* random_array)
 		}
 	}
 
+	// Set ID numbers for each of the Character objects.
+	for (int i = 0; i < 4; i++)
+	{
+		opponents[i].ID = i + 1;
+	}
+
 	return opponents;
 }
-
-
-

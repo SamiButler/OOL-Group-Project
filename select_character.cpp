@@ -46,14 +46,3 @@ string select_character()
 
 	return character_name;
 }
-
-
-// while ((user_input < 1) || (user_input > 5))
-	// {
-		// cin >> user_input;
-		// if ((user_input < 1) || (user_input > 5))
-		// {
-			// cout << "Please make sure to enter a number between 1 and 5." << endl;
-		// }
-	// }
-
