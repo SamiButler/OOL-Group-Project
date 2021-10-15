@@ -63,7 +63,7 @@ Character* opponent_array(Character user, int* random_array)
 	{
 		for (int i = 0; i < 3; i++)
 		{
-			name_array[i] = all_names[i]
+			name_array[i] = all_names[i];
 		}
 		name_array[3] = "Chuck Norris";
 

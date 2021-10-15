@@ -6,7 +6,8 @@
 class Character
 {
 public:
-	Character(std::string character_name, int character_ID);
+	Character();
+	Character(std::string character_name, int character_number);
 	std::string name;
 	int ID;
 	int hitpoints;
