@@ -26,16 +26,5 @@ bool check_input(string input, int numOpts){
 }
 
 
-int main(){
-	
-	string test = "please break";
-	
-	check_input(test, 4);
-	check_input("-3", 4);
-	check_input("2", 1);	
-	
-	
-	return 0;
-	
-}
+
 
