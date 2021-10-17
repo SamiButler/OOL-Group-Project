@@ -20,7 +20,9 @@ int main()				// So far use 'make check_intro' to test this.
 
 	cout << "Choose from the following fighters:" << endl;
 
-	cout << endl << "1 Scott Pilgrim" << endl << "2 Tony Montana" << endl << "3 Skinny Pete" << endl << "4 Dirty Harry" << endl << "5 Chuck Norris" << endl << endl;	
+	cout << endl << "1 Scott Pilgrim" << endl << "2 Tony Montana" << endl << 
+	"3 Skinny Pete" << endl << "4 Dirty Harry" << endl << "5 Chuck Norris" << 
+	endl << endl;	
 
 	string UserName = select_character();
 	int UserID = 0;
@@ -38,6 +40,7 @@ int main()				// So far use 'make check_intro' to test this.
 	// Prompt user if ready to continue?
 	cout << "Now that you have selected your fighter, the game will be begin shortly. Enter 1 to proceed." << endl;
 	ready_to_continue = ready();
+	cout << endl;
 
 
 	// This section is where the main stage of the game occurs: the
