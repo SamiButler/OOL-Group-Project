@@ -11,7 +11,8 @@ public:
 	std::string name;
 	int ID;
 	int hitpoints;
-	int stun_counter;
+	int heavy_recharge_time;
+	int special_recharge_time;
 };
 
 #endif

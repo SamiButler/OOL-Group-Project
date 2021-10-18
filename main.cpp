@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Character.h"
+#include "Move.h"
 
 using namespace std;
 
@@ -51,6 +52,7 @@ int main()				// So far use 'make check_intro' to test this.
 		if (victory == false)
 		{
 			cout << "Game over - you died!! Better luck next time." << endl;
+			delete[] opponents_array;
 			return 0;
 		}
 	}
