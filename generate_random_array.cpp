@@ -17,7 +17,7 @@ int* generate_random_array()
 
 	for (int i = 0; i < 4; i++)
 	{
-		random_value = (rand()%3) + 1;
+		random_value = (rand()%3) + 1; // Random int between 1 and 3.
 		
 		temp_value = random_order_array[i];
 		random_order_array[i] = random_order_array[random_value];

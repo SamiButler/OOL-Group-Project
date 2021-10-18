@@ -18,7 +18,7 @@ bool check_input(string input, int numOpts){
 	}
 	
 	if (status == false){
-		cout << "Invalid input, try again" << endl;
+		cout << "Invalid input, try again." << endl;
 	}
 	
 	
