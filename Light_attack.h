@@ -3,7 +3,8 @@
 
 #include "Move.h"
 
-class Light_attack{
+class Light_attack : public Move
+{
     public:
     Light_attack();
     change_opponent_health();
