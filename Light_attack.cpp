@@ -13,19 +13,16 @@ int Light_attack::change_opponent_health(){
     srand(time(NULL));
     int damage;
     
-    if (opponent_move_type == 1 || opponent_move_type == 4){
-        damage = (rand()%20);
+    if (opponent_move_type == 1){
+        damage = (rand()%10) + 10;
     }
     
     if (opponent_move_type == 2){
-        damage = (rand()%20) - (rand()%20);
-        if (damage < 0){
-            damage = 0;
-        }
+        damage = (rand()%5);
     }
     
     if (opponent_move_type == 3){
-        damage = (rand()%30);
+        damage = (rand()%10) + 20;
     }
     return damage;
 }
