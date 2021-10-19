@@ -15,9 +15,9 @@ bool next_round(Character User, Character Opponent)
 {
 	bool win_or_lose = true;
 
-	cout << "This fight is between " << User.name << " and " << Opponent.name << endl << << endl << "GOOD LUCK!" << endl << endl;
+	cout << "This fight is between " << User.name << " and " << Opponent.name << endl << endl << "GOOD LUCK!" << endl << endl;
 
-	while (User.hitpoints >= 0 && Opponent.hitpoints >= 0)
+	while (User.hitpoints > 0 && Opponent.hitpoints > 0)
 	{
 		Move* User_Move = new Move; // Create UserMove.
 		Move* Opponent_Move = new Move; // Create OpponenetMove.
@@ -33,13 +33,31 @@ bool next_round(Character User, Character Opponent)
 		Opponent.hitpoints = Opponent.hitpoints - do_move(Opponent_Move->computer_move_type, User_Move->move_type);
 		
 		cout << User.name << " attacked with " << User_Move->move_type << " and " << Opponent.name << " attacked with " << Opponent_Move->computer_move_type << "." << endl; 
+		
+		if (User.hitpoints > 0 && Opponent.hitpoints > 0)				// Both players hitpoints > 0.
+		{
 		cout << User.name << ": " << User.hitpoints << "hp" << endl;
-		cout << Opponent.name << ": " << Opponent.hitpoints << "hp" << endl << endl; // UPDATE THIS LINE
+		cout << Opponent.name << ": " << Opponent.hitpoints << "hp" << endl << endl;
+		}
+		else if (User.hitpoints > 0 && Opponent.hitpoints <= 0)			// Player > 0, Computer < 0.
+		{
+		cout << User.name << ": " << User.hitpoints << "hp" << endl;
+		cout << Opponent.name << ": 0hp" << endl << endl;
+		}
+		else if (User.hitpoints <= 0 && Opponent.hitpoints > 0)			// Player < 0, Computer > 0.
+		{
+		cout << User.name << ": 0hp" << endl;
+		cout << Opponent.name << ": " << Opponent.hitpoints << "hp" << endl << endl;
+		win_or_lose = false;	
+		}
+		else if (User.hitpoints <= 0 && Opponent.hitpoints <=0)			// When both players die on the same turn,
+		{																// the user will win by 1hp.
+		cout << User.name << ": 1hp" << endl;
+		cout << Opponent.name << ": 0hp" << endl << endl;
+		}
 
 		delete User_Move;	// Delete UserMove for next attack.
 	}
-	
-	// We need to write lots and lots of code HERE!
 
 	return win_or_lose;
 }
