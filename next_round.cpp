@@ -6,6 +6,11 @@
 
 using namespace std;
 
+extern int do_move(int move_type, int counter_move_type);
+extern int light_attack(int counter_move_type);
+extern int defend(int counter_move_type);
+extern int heavy_attack(int counter_move_type);
+
 bool next_round(Character User, Character Opponent)
 {
 	bool win_or_lose = true;
@@ -23,8 +28,8 @@ bool next_round(Character User, Character Opponent)
 
 		User_Move->select_move(User);
 		Opponent_Move->computer_move(Opponent);
-		User.hitpoints = User.hitpoints - do_move(User_Move, Opponent_Move);
-		Opponent.hitpoints = Opponent.hitpoints - do_move(Opponent_Move, User_Move);
+		User.hitpoints = User.hitpoints - do_move(User_Move.move_type, Opponent_Move.computer_move_type);
+		Opponent.hitpoints = Opponent.hitpoints - do_move(Opponent_Move.computer_move_type, User_Move.move_type);
 		cout << User.name << " attacked with " << User_Move->move_type << " and " << Opponent.name << " attacked with " << Opponent_Move->computer_move_type << "." << endl; 
 		cout << "Information here about hitpoints." << endl << endl; // UPDATE THIS LINE
 
