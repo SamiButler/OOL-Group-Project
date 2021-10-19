@@ -50,7 +50,7 @@ void Move::select_move(Character User){
 
     int move_int = stoi(my_move);
     
-    move_type = my_move;
+    move_type = move_int;
 	
 }
 
