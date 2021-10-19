@@ -1,12 +1,12 @@
 #include <iostream>
 #include <string>
-#include <time.h>
-#include <stdlib.h>
+#include <ctime>
+#include <cstdlib>
 #include "Character.h"
 #include "Move.h"
 
 int light_attack(int counter_move_type){
-    srand(time(NULL));
+    srand((unsigned)time(0));
     int damage;
     
     if (counter_move_type == 1){
@@ -24,7 +24,7 @@ int light_attack(int counter_move_type){
 }
 
 int defend(int counter_move_type){
-    srand(time(NULL));
+    srand((unsigned)time(0));
     int damage;
     
     if (counter_move_type == 1){
@@ -42,7 +42,7 @@ int defend(int counter_move_type){
 }
 
 int heavy_attack(int counter_move_type){
-    srand(time(NULL));
+    srand((unsigned)time(0));
     int damage;
     
     if (counter_move_type == 1){
