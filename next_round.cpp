@@ -26,11 +26,11 @@ bool next_round(Character User, Character Opponent)
 
 		cout << endl;
 
-		User_Move->select_move(User);
-		Opponent_Move->computer_move(Opponent);
+				User_Move->select_move(User);				// LINES 29 - 33 SHOULD NOT EXIST AFTER MOVING THIS INFO TO THE MOVE CLASS.
+				Opponent_Move->computer_move(Opponent);		// INSTEAD ONE WE JUST CALL User_Move->attack(User, Opponent) and Opponent_Move->(Opponent, User).
 
-		User.hitpoints = User.hitpoints - do_move(User_Move->move_type, Opponent_Move->computer_move_type);
-		Opponent.hitpoints = Opponent.hitpoints - do_move(Opponent_Move->computer_move_type, User_Move->move_type);
+				User.hitpoints = User.hitpoints - do_move(User_Move->move_type, Opponent_Move->computer_move_type);
+				Opponent.hitpoints = Opponent.hitpoints - do_move(Opponent_Move->computer_move_type, User_Move->move_type);
 		
 		cout << User.name << " attacked with " << User_Move->move_type << " and " << Opponent.name << " attacked with " << Opponent_Move->computer_move_type << "." << endl; 
 		

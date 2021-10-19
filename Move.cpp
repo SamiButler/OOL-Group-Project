@@ -78,6 +78,7 @@ void Move::computer_move(Character Opponent)
     computer_move_type = computer_move;
 }
 
-Move::~Move(){
-
+void attack(Character character1, Character character2)
+{
+    // ENTER ALL THE CODE HERE FROM YESTERDAY AND EDIT IT SO IT WORKS
 }
