@@ -15,7 +15,7 @@ bool next_round(Character User, Character Opponent)
 {
 	bool win_or_lose = true;
 
-	cout << "This fight is between " << User.name << " and " << Opponent.name << endl << endl;
+	cout << "This fight is between " << User.name << " and " << Opponent.name << endl << << endl << "GOOD LUCK!" << endl << endl;
 
 	while (User.hitpoints >= 0 && Opponent.hitpoints >= 0)
 	{

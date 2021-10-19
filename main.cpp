@@ -17,7 +17,10 @@ int main()				// So far use 'make check_intro' to test this.
 	bool ready_to_continue = false;
 	bool victory = true;
 
-	cout << endl << "THIS IS WHERE THE INTO MESSAGE WILL GO" << endl;
+	cout << endl << "WELCOME TO ~STREET BRAWLER~!!" << endl;
+	cout << "A text-based fighting game featuring some of your favourite characters!" << endl;
+	cout << "It's your job to defeat your opponents in brutal hand-to-hand combat, one by one." << endl;
+	cout << "GOOD LUCK!" << endl <<endl;
 
 	cout << "Choose from the following fighters:" << endl;
 
