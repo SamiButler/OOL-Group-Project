@@ -5,6 +5,20 @@
 #include "Character.h"
 #include "Move.h"
 
+int do_move(int move_type, int counter_move_type){
+    int damage;
+    if (move_type == 1){
+        damage = light_attack(counter_move_type);
+    }
+    if (move_type == 2){
+        damage = defend(counter_move_type);
+    }
+    if (move_type == 3){
+        damage = heavy_attack(counter_move_type);
+    }
+    return damage;
+}
+
 int light_attack(int counter_move_type){
     srand(time(NULL));
     int damage;

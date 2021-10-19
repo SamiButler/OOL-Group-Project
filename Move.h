@@ -11,7 +11,7 @@ public:
 								 // well as how the move reacts to its opponent (eg if type is 3, 
 								 // depending on how we choose to proceed
 	                             // a subclass for every move type or use a variable to define each type
-	std::string move_type;
+	int move_type;
 	int computer_move_type;
 	void move_menu(Character User);
     void select_move(Character User);

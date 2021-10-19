@@ -23,6 +23,8 @@ bool next_round(Character User, Character Opponent)
 
 		User_Move->select_move(User);
 		Opponent_Move->computer_move(Opponent);
+		User.hitpoints = User.hitpoints - do_move(User_Move, Opponent_Move);
+		Opponent.hitpoints = Opponent.hitpoints - do_move(Opponent_Move, User_Move);
 		cout << User.name << " attacked with " << User_Move->move_type << " and " << Opponent.name << " attacked with " << Opponent_Move->computer_move_type << "." << endl; 
 		cout << "Information here about hitpoints." << endl << endl; // UPDATE THIS LINE
 

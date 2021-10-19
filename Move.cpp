@@ -47,6 +47,8 @@ void Move::select_move(Character User){
         my_move = "0";
         goto start_while;
     }
+
+    int move_int = stoi(my_move);
     
     move_type = my_move;
 	
