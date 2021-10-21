@@ -13,6 +13,7 @@ public:
 	int hitpoints;
 	int heavy_recharge_time;
 	int special_recharge_time;
+	
 };
 
 #endif
