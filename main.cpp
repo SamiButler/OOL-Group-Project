@@ -68,23 +68,7 @@ int main()				// So far use 'make check_intro' to test this.
 	for (int match = 0; match < 4; match++)
 	{
 
-		if (opponents_array[match].name == "Scott Pilgrim"){
-			scott_pilgrim Opponent = opponents_array[match];
-		}
-		else if (opponents_array[match].name == "Tony Montana"){
-			tony_montana Opponent = opponents_array[match];
-		}
-		else if (opponents_array[match].name == "Skinny Pete"){
-			skinny_pete Opponent = opponents_array[match];
-		}
-		else if (opponents_array[match].name == "Dirty Harry"){
-			dirty_harry Opponent = opponents_array[match];
-		}
-		else if (opponents_array[match].name == "Chuck Norris"){
-			chuck_norris Opponent = opponents_array[match];
-		}
-
-		victory = next_round(User, Opponent);
+		victory = next_round(User, opponents_array[match]);
 		if (victory == false)
 		{
 			cout << "Game over - you died!! Better luck next time." << endl;
