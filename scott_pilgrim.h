@@ -2,6 +2,7 @@
 #define SCOTT_PILGRIM_H
 
 #include <string>
+#include "Character.h"
 
 class scott_pilgrim : public Character
 
