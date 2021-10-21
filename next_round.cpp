@@ -23,7 +23,7 @@ bool next_round(Character * User, Character Opponent)
 		Move* User_Move = new Move; // Create UserMove.
 		Move* Opponent_Move = new Move; // Create OpponenetMove.
 		
-		User_Move->move_menu(User);
+		User_Move->move_menu(&User);
 
 		cout << endl;
 
