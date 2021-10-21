@@ -46,7 +46,7 @@ int main()				// So far use 'make check_intro' to test this.
 	else if (UserName == "Dirty Harry"){
 		dirty_harry * User = new dirty_harry;
 	}
-	else {
+	else if (UserName == "Chuck Norris"){
 		chuck_norris * User = new chuck_norris;
 	}
 
