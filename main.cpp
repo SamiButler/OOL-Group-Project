@@ -38,7 +38,7 @@ int main()				// So far use 'make check_intro' to test this.
 		scott_pilgrim User;
 	}
 	else if (UserName == "Tony Montana"){
-		tony_montana  User;
+		tony_montana User;
 	}
 	else if (UserName == "Skinny Pete"){
 		skinny_pete User;
@@ -46,7 +46,7 @@ int main()				// So far use 'make check_intro' to test this.
 	else if (UserName == "Dirty Harry"){
 		dirty_harry User;
 	}
-	else if (UserName == "Chuck Norris"){
+	else (UserName == "Chuck Norris"){
 		chuck_norris User;
 	}
 
