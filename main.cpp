@@ -2,6 +2,7 @@
 #include <string>
 #include "Character.h"
 #include "Move.h"
+#include "scott_pilgrim.h"
 
 using namespace std;
 
