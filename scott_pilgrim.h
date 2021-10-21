@@ -15,6 +15,6 @@ public:
 	int special_recharge_time;*/
 	int special_attack();
 
-}
+};
 
 #endif
