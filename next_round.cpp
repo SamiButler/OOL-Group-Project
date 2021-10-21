@@ -18,7 +18,7 @@ bool next_round(Character User, Character Computer)
 
 	cout << "This fight is between " << User.name << " and " << Computer.name << endl << endl << "GOOD LUCK!" << endl << endl;
 
-	Character Opponent;
+	scott_pilgrim Opponent;
 	if (Computer.name == "Scott Pilgrim"){
 		scott_pilgrim Opponent;
 	}
