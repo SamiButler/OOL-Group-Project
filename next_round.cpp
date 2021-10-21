@@ -46,12 +46,12 @@ bool next_round(Character User, Character Computer)
 				User_Move->select_move(User);				// LINES 29 - 33 SHOULD NOT EXIST AFTER MOVING THIS INFO TO THE MOVE CLASS.
 				Opponent_Move->computer_move(Opponent);		// INSTEAD ONE WE JUST CALL User_Move->attack(User, Opponent) and Opponent_Move->(Opponent, User).
 				if (User_Move->move_type == 4){
-					Opponent_hitpoints = Opponent_hitpoints - User.special_attack();
+					Opponent.hitpoints = Opponent.hitpoints - User.special_attack();
 				}
 				User.hitpoints = User.hitpoints - do_move(User_Move->move_type, Opponent_Move->computer_move_type);
 
 				if (Opponent_Move->move_type == 4){
-					User_hitpoints = User_hitpoints - Opponent.special_attack();
+					User.hitpoints = User.hitpoints - Opponent.special_attack();
 				}
 				Opponent.hitpoints = Opponent.hitpoints - do_move(Opponent_Move->computer_move_type, User_Move->move_type);
 		
