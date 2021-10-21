@@ -1,5 +1,5 @@
-#ifndef CHARACTERS_H
-#define CHARACTERS_H
+#ifndef SCOTT_PILGRIM__
+#define SCOTT_PILGRIM__
 
 #include <string>
 #include "Character.h"
@@ -15,7 +15,7 @@ public:
 	int hitpoints;
 	int heavy_recharge_time;
 	int special_recharge_time;
-	int special_attack();
+	virtual int special_attack();
 
 };
 
