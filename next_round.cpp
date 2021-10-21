@@ -12,11 +12,11 @@ extern int light_attack(int counter_move_type);
 extern int defend(int counter_move_type);
 extern int heavy_attack(int counter_move_type);
 
-bool next_round(Character User, Character Computer)
+bool next_round(Character User, Character Opponent)
 {
 	bool win_or_lose = true;
 
-	cout << "This fight is between " << User.name << " and " << Computer.name << endl << endl << "GOOD LUCK!" << endl << endl;
+	cout << "This fight is between " << User.name << " and " << Opponent.name << endl << endl << "GOOD LUCK!" << endl << endl;
 
 	while (User.hitpoints > 0 && Opponent.hitpoints > 0)
 	{
