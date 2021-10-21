@@ -54,7 +54,7 @@ int main()				// So far use 'make check_intro' to test this.
 	// the IDs and hence order that you fight the opponents in.
 	// This then helps create the opponents_array.
 	int* random_array = generate_random_array();
-	Character* opponents_array = opponent_array(User, random_array);
+	Character* opponents_array = opponent_array(*User, random_array);
 	delete[] random_array;
 
 	// Prompt user if ready to continue?
