@@ -12,13 +12,13 @@ extern int light_attack(int counter_move_type);
 extern int defend(int counter_move_type);
 extern int heavy_attack(int counter_move_type);
 
-bool next_round(Character User, Character Opponent)
+bool next_round(Character * User, Character Opponent)
 {
 	bool win_or_lose = true;
 
-	cout << "This fight is between " << User.name << " and " << Opponent.name << endl << endl << "GOOD LUCK!" << endl << endl;
+	cout << "This fight is between " << User->name << " and " << Opponent.name << endl << endl << "GOOD LUCK!" << endl << endl;
 
-	while (User.hitpoints > 0 && Opponent.hitpoints > 0)
+	while (User->hitpoints > 0 && Opponent.hitpoints > 0)
 	{
 		Move* User_Move = new Move; // Create UserMove.
 		Move* Opponent_Move = new Move; // Create OpponenetMove.
@@ -30,36 +30,36 @@ bool next_round(Character User, Character Opponent)
 				User_Move->select_move(User);				// LINES 29 - 33 SHOULD NOT EXIST AFTER MOVING THIS INFO TO THE MOVE CLASS.
 				Opponent_Move->computer_move(Opponent);		// INSTEAD ONE WE JUST CALL User_Move->attack(User, Opponent) and Opponent_Move->(Opponent, User).
 				if (User_Move->move_type == 4){
-					Opponent.hitpoints = Opponent.hitpoints - User.special_attack();
+					Opponent.hitpoints = Opponent.hitpoints - User->special_attack();
 				}
-				User.hitpoints = User.hitpoints - do_move(User_Move->move_type, Opponent_Move->computer_move_type);
+				User->hitpoints = User->hitpoints - do_move(User_Move->move_type, Opponent_Move->computer_move_type);
 
 				if (Opponent_Move->move_type == 4){
-					User.hitpoints = User.hitpoints - Opponent.special_attack();
+					User->hitpoints = User->hitpoints - Opponent.special_attack();
 				}
 				Opponent.hitpoints = Opponent.hitpoints - do_move(Opponent_Move->computer_move_type, User_Move->move_type);
 		
-		cout << User.name << " attacked with " << User_Move->move_type << " and " << Opponent.name << " attacked with " << Opponent_Move->computer_move_type << "." << endl; 
+		cout << User->name << " attacked with " << User_Move->move_type << " and " << Opponent.name << " attacked with " << Opponent_Move->computer_move_type << "." << endl; 
 		
-		if (User.hitpoints > 0 && Opponent.hitpoints > 0)				// Both players hitpoints > 0.
+		if (User->hitpoints > 0 && Opponent.hitpoints > 0)				// Both players hitpoints > 0.
 		{
-		cout << User.name << ": " << User.hitpoints << "hp" << endl;
+		cout << User->name << ": " << User->hitpoints << "hp" << endl;
 		cout << Opponent.name << ": " << Opponent.hitpoints << "hp" << endl << endl;
 		}
-		else if (User.hitpoints > 0 && Opponent.hitpoints <= 0)			// Player > 0, Computer < 0.
+		else if (User->hitpoints > 0 && Opponent.hitpoints <= 0)			// Player > 0, Computer < 0.
 		{
-		cout << User.name << ": " << User.hitpoints << "hp" << endl;
+		cout << User->name << ": " << User->hitpoints << "hp" << endl;
 		cout << Opponent.name << ": 0hp" << endl << endl;
 		}
-		else if (User.hitpoints <= 0 && Opponent.hitpoints > 0)			// Player < 0, Computer > 0.
+		else if (User->hitpoints <= 0 && Opponent.hitpoints > 0)			// Player < 0, Computer > 0.
 		{
-		cout << User.name << ": 0hp" << endl;
+		cout << User->name << ": 0hp" << endl;
 		cout << Opponent.name << ": " << Opponent.hitpoints << "hp" << endl << endl;
 		win_or_lose = false;	
 		}
-		else if (User.hitpoints <= 0 && Opponent.hitpoints <=0)			// When both players die on the same turn,
+		else if (User->hitpoints <= 0 && Opponent.hitpoints <=0)			// When both players die on the same turn,
 		{																// the user will win by 1hp.
-		cout << User.name << ": 1hp" << endl;
+		cout << User->name << ": 1hp" << endl;
 		cout << Opponent.name << ": 0hp" << endl << endl;
 		}
 
