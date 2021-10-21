@@ -5,14 +5,15 @@
 
 class Character
 {
-protected:
-	int hitpoints;
+public:
+	Character();
+	Character(std::string character_name, int character_number);
+	std::string name;
 	int ID;
+	int hitpoints;
 	int heavy_recharge_time;
 	int special_recharge_time;
-public:
-	void set_values(int char_hitpoints, int char_ID, int char_heavy_recharge_time, int char_special_recharge_time);
-	virtual int special_attack() = 0;
+	int special_attack();
 
 };
 
