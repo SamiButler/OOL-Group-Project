@@ -46,7 +46,7 @@ int main()				// So far use 'make check_intro' to test this.
 	else if (UserName == "Dirty Harry"){
 		dirty_harry User;
 	}
-	else (UserName == "Chuck Norris"){
+	else {
 		chuck_norris User;
 	}
 
