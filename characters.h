@@ -5,15 +5,41 @@
 #include "Character.h"
 
 class scott_pilgrim : public Character
-
 {
 public:
-	/*scott_pilgrim(string character_name, int character_number);
-	std::string name;
-	int ID;
-	int hitpoints;
-	int heavy_recharge_time;
-	int special_recharge_time;*/
+
+	int special_attack();
+
+};
+
+class tony_montana : public Character
+{
+public:
+
+	int special_attack();
+
+};
+
+class skinny_pete : public Character
+{
+public:
+
+	int special_attack();
+
+};
+
+class dirty_harry : public Character
+{
+public:
+
+	int special_attack();
+
+};
+
+class chuck_norris : public Character
+{
+public:
+
 	int special_attack();
 
 };
