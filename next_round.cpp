@@ -20,23 +20,18 @@ bool next_round(Character User, Character Computer)
 
 	Character Opponent;
 	if (Computer.name == "Scott Pilgrim"){
-		delete Opponent;
 		scott_pilgrim Opponent;
 	}
 	else if (Computer.name == "Tony Montana"){
-		delete Opponent;
 		tony_montana Opponent;
 	}
 	else if (Computer.name == "Skinny Pete"){
-		delete Opponent;
 		skinny_pete Opponent;
 	}
 	else if (Computer.name == "Dirty Harry"){
-		delete Opponent;
 		dirty_harry Opponent;
 	}
 	else if (Computer.name == "Chuck Norris"){
-		delete Opponent;
 		chuck_norris Opponent;
 	}
 
