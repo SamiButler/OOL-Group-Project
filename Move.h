@@ -14,6 +14,7 @@ public:
     void select_move(Character User);
     void computer_move(Character Opponent);
     void attack(Character character1, Character character2);
+
 };
 
 #endif

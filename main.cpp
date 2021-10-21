@@ -32,6 +32,9 @@ int main()				// So far use 'make check_intro' to test this.
 	int UserID = 0;
 
 	// Create user character.
+	if (UserName = "Scott Pilgrim"){
+		Character* User = new scott_pilgrim(username,1)
+	}
 	Character User = Character(UserName, 0);
 
 	// Generate random number array that will correspond to
