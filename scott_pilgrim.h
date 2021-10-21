@@ -16,3 +16,5 @@ public:
 	int special_attack();
 
 }
+
+#endif
