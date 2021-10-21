@@ -8,5 +8,5 @@ using namespace std;
 
 int scott_pilgrim::special_attack()
 {
-	//information about special attack damage here
+	return 0;//information about special attack damage here
 }
