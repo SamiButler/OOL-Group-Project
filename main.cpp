@@ -34,7 +34,7 @@ int main()				// So far use 'make check_intro' to test this.
 
 	// Create user character.
 	if (UserName == "Scott Pilgrim"){
-		scott_pilgrim User = Character(Username,1);
+		scott_pilgrim User = Character(UserName,1);
 	}
 	else {
 		Character User = Character(UserName, 0);
