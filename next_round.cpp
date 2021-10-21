@@ -12,13 +12,12 @@ extern int light_attack(int counter_move_type);
 extern int defend(int counter_move_type);
 extern int heavy_attack(int counter_move_type);
 
-bool next_round(Character User, Character Computer)
+bool next_round(Character const &User, Character Computer)
 {
 	bool win_or_lose = true;
 
 	cout << "This fight is between " << User.name << " and " << Computer.name << endl << endl << "GOOD LUCK!" << endl << endl;
 
-	scott_pilgrim Opponent;
 	if (Computer.name == "Scott Pilgrim"){
 		scott_pilgrim Opponent;
 	}
