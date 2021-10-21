@@ -4,20 +4,9 @@
 
 using namespace std;
 
-Character::Character()
+void Character::set_values(int char_hitpoints, int char_heavy_recharge_time, int char_special_recharge_time)
 {
-	name = "null";
-	ID = -1;	// This ID needs to be properly assigned later.
-	hitpoints = 100;
-	heavy_recharge_time = 0;
-	special_recharge_time = 1;
-}
-
-Character::Character(string character_name, int character_number)
-{
-	name = character_name;
-	ID = character_number;
-	hitpoints = 100;
-	heavy_recharge_time = 0;
-	special_recharge_time = 1;
+	hitpoints = char_hitpoints;
+	heavy_recharge_time = char_heavy_recharge_time;
+	special_recharge_time = char_special_recharge_time;
 }

@@ -35,19 +35,19 @@ int main()				// So far use 'make check_intro' to test this.
 	
 	// Create user character.
 	if (UserName == "Scott Pilgrim"){
-		scott_pilgrim * User = new scott_pilgrim;
+		Character* User = new scott_pilgrim;
 	}
 	else if (UserName == "Tony Montana"){
-		tony_montana * User = new tony_montana;
+		Character* User = new tony_montana;
 	}
 	else if (UserName == "Skinny Pete"){
-		skinny_pete * User = new skinny_pete;
+		Character* User = new skinny_pete;
 	}
 	else if (UserName == "Dirty Harry"){
-		dirty_harry * User = new dirty_harry;
+		Character* User = new dirty_harry;
 	}
 	else if (UserName == "Chuck Norris"){
-		chuck_norris * User = new chuck_norris;
+		Character* User = new chuck_norris;
 	}
 
 	// Generate random number array that will correspond to
