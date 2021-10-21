@@ -32,22 +32,22 @@ int main()				// So far use 'make check_intro' to test this.
 	string UserName = select_character();
 	int UserID = 0;
 
-	Character User = Character(UserName, 0);
+	
 	// Create user character.
 	if (UserName == "Scott Pilgrim"){
-		scott_pilgrim User;
+		scott_pilgrim* User;
 	}
 	else if (UserName == "Tony Montana"){
-		tony_montana User;
+		tony_montana*  User;
 	}
 	else if (UserName == "Skinny Pete"){
-		skinny_pete User;
+		skinny_pete* User;
 	}
 	else if (UserName == "Dirty Harry"){
-		dirty_harry User;
+		dirty_harry* User;
 	}
 	else if (UserName == "Chuck Norris"){
-		chuck_norris User;
+		chuck_norris* User;
 	}
 
 	// Generate random number array that will correspond to
@@ -78,6 +78,7 @@ int main()				// So far use 'make check_intro' to test this.
 	}
 
 	delete[] opponents_array;
+	delete User;
 
 	cout << endl;
 	return 0;
