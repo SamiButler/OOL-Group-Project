@@ -12,7 +12,7 @@ extern int light_attack(int counter_move_type);
 extern int defend(int counter_move_type);
 extern int heavy_attack(int counter_move_type);
 
-bool next_round(Character * User, Character Computer)
+bool next_round(Character User, Character Computer)
 {
 	bool win_or_lose = true;
 
