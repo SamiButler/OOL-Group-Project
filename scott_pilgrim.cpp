@@ -25,5 +25,5 @@ scott_pilgrim::scott_pilgrim(string character_name, int character_number)
 
 virtual int scott_pilgrim::special_attack()
 {
-	return 0;//information about special attack damage here
+	return 0;
 }
