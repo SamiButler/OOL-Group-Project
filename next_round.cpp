@@ -3,6 +3,7 @@
 #include <time.h>
 #include "Character.h"
 #include "Move.h"
+#include "characters.h"
 
 using namespace std;
 
