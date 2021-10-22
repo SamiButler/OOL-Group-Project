@@ -7,8 +7,6 @@ using namespace std;
 extern int* generate_random_array();
 extern Character* opponent_array(Character user, int* random_array);
 
-#define PRINT(x) cout << x << " "
-
 
 int main()		// This file tests whether the random_opponents_array
 				// will return different results each time the program runs.
@@ -16,77 +14,71 @@ int main()		// This file tests whether the random_opponents_array
 				// created.
 {
 	// Initialise varaiables.
-	string AllNames[5] = {"Scott Pilgrim", "Tony Montana" "Skinny Pete",
+	string AllNames[5] = {"Scott Pilgrim", "Tony Montana", "Skinny Pete",
 						  "Dirty Harry", "Chuck Norris"};
-	string UserName = AllNames[0];
+	string UserName = "Scott Pilgrim";
 	Character Test_User = Character(UserName, 0);
 
-	// Test 1
-	Character* opponents_1 = new Character[4];
-	int* random_array_1 = new int[4];
-	random_array_1 = generate_random_array();
-	opponents_1 = opponent_array(Test_User, random_array_1);
-
-	cout << "Generation 1: ";
-
-	for (int i = 0; i < 4; i++)
-	{
-		PRINT(opponents_1[i].name);
-	}
-	
-	cout << endl;
-	
-	// Test 2
-	Character* opponents_2 = new Character[4];
-	int* random_array_2 = new int[4];
-	random_array_2 = generate_random_array();
-	opponents_2 = opponent_array(Test_User, random_array_2);
-
-	cout << "Generation 2: ";
-
-	for (int i = 0; i < 4; i++)
-	{
-		PRINT(opponents_2[i].name);
-	}
-	
-	cout << endl;
-
-	// Test 3
-	Character* opponents_3 = new Character[4];
-	int* random_array_3 = new int[4];
-	random_array_3 = generate_random_array();
-	opponents_3 = opponent_array(Test_User, random_array_3);
-
-	cout << "Generation 3: ";
-
-	for (int i = 0; i < 4; i++)
-	{
-		PRINT(opponents_3[i].name);
-	}
-	
-	cout << endl;
-
-
-	// Assessing the results:
+	// Original array.
+	string OriginalArray[4];
 	int counter = 0;
 
+	cout << endl << "Original generation: ";
+
+	for (int i = 0; i < 5; i++)
+	{
+		if (UserName != AllNames[i])
+		{
+			OriginalArray[counter] = AllNames[i];
+			counter++;
+		}
+	}
+
+	for (int i = 0; i < 4; i++)
+	{		
+		cout << OriginalArray[i] << " "; 
+	}
+
+	cout << endl;
+
+	// Random array.
+	Character* opponents = new Character[4];
+	int* random_array_1 = new int[4];
+	random_array_1 = generate_random_array();
+	opponents = opponent_array(Test_User, random_array_1);
+
+	cout << "Random generation: ";
+
 	for (int i = 0; i < 4; i++)
 	{
-		if (opponents_1[i].name == opponents_2[i].name && opponents_1[i].name == opponents_3[i].name)
+		cout << opponents[i].name << " ";
+	}
+	
+	cout << endl;
+	
+	counter = 0;
+
+	for (int i = 0; i < 4; i++)
+	{
+		if (OriginalArray[i] == opponents[i].name)
 		{
 			counter++;
 		}
 	}
 
-	(counter == 4)?(cout << "Test failed!"):(cout << "Test successful!");
-	cout << endl;
+	if (counter == 4)
+	{
+		cout << "Test failed! Both arrays are the same! Try again." << endl << endl;
+	}
+	else
+	{
+		cout << "Test successful! Both arrays are different." << endl << endl;
+	}
+
 
 	delete[] random_array_1;
-	delete[] random_array_2;
-	delete[] random_array_3;
-	delete[] opponents_1;
-	delete[] opponents_2;
-	delete[] opponents_3;
+	delete[] opponents;
+
 
 	return 0;
 }
