@@ -7,4 +7,7 @@ test_random_opponents_array: test_random_opponents_array.cpp generate_random_arr
 	g++ test_random_opponents_array.cpp generate_random_array.cpp opponent_array.cpp Character.cpp -o test_random_opponents_array
 	./test_random_opponents_array
 
+test_light_attack: test_light_attack.cpp Character.cpp Move.cpp move_functions.cpp
+	g++ test_light_attack.cpp Character.cpp Move.cpp move_functions.cpp -o test_light_attack
+	./test_light_attack
 	
