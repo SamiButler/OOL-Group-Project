@@ -15,7 +15,7 @@ int main(){
 		else if (i <=5){
 			cout << "Expected Output: true";
 		}
-		cout << "    Output: " <<  check_input("5", i) << endl
+		cout << "    Output: " <<  check_input("5", i) << endl;
 	}
 	return 0;
 }
