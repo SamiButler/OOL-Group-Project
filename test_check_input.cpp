@@ -13,7 +13,7 @@ int main(){
 			cout << "    Expected Output: 1";
 		}
 		else if (i <5){
-			cout << "    Expected Output: Invalid input, try again. " endl << "0";
+			cout << "    Expected Output: Invalid input, try again. " << endl << "0";
 		}
 		cout << "    Output: " <<  check_input("5", i) << endl;
 	}
