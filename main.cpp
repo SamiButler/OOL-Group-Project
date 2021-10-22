@@ -10,7 +10,7 @@ extern string select_character();
 extern int* generate_random_array();
 extern Character* opponent_array(Character user, int* random_array);
 extern bool ready();
-extern bool next_round(Character User, Character Opponent);
+extern bool next_round(Character* User, Character Opponent);
 
 
 int main()				// So far use 'make check_intro' to test this.
@@ -34,21 +34,21 @@ int main()				// So far use 'make check_intro' to test this.
 
 	
 	// Create user character.
-	if (UserName == "Scott Pilgrim"){
-		scott_pilgrim * User = new scott_pilgrim;
-	}
-	else if (UserName == "Tony Montana"){
-		tony_montana * User = new tony_montana;
-	}
-	else if (UserName == "Skinny Pete"){
-		skinny_pete * User = new skinny_pete;
-	}
-	else if (UserName == "Dirty Harry"){
-		dirty_harry * User = new dirty_harry;
-	}
-	else if (UserName == "Chuck Norris"){
-		chuck_norris * User = new chuck_norris;
-	}
+	// if (UserName == "Scott Pilgrim"){
+		Character * User = new Character(UserName, UserID);
+	// }
+	// else if (UserName == "Tony Montana"){
+	// 	tony_montana * User = new tony_montana;
+	// }
+	// else if (UserName == "Skinny Pete"){
+	// 	skinny_pete * User = new skinny_pete;
+	// }
+	// else if (UserName == "Dirty Harry"){
+	// 	dirty_harry * User = new dirty_harry;
+	// }
+	// else if (UserName == "Chuck Norris"){
+	// 	chuck_norris * User = new chuck_norris;
+	// }
 
 	// Generate random number array that will correspond to
 	// the IDs and hence order that you fight the opponents in.
@@ -75,7 +75,15 @@ int main()				// So far use 'make check_intro' to test this.
 			delete[] opponents_array;
 			return 0;
 		}
+		else
+		{
+			User->hitpoints = 100;
+			cout << "Congratulations, you have won this round!" << endl;
+		}
 	}
+
+	cout << "Nice one - you have beaten all of the opponenets and are now the undisputed king of the streetz. All will bow down to you and kiss your feet. Mwah mwah mwah" << endl;
+	cout << endl << "THE END - THANKS FOR PLAYING" << endl;
 
 	delete[] opponents_array;
 	delete User;
