@@ -10,4 +10,8 @@ test_random_opponents_array: test_random_opponents_array.cpp generate_random_arr
 test_light_attack: test_light_attack.cpp Character.cpp Move.cpp move_functions.cpp
 	g++ test_light_attack.cpp Character.cpp Move.cpp move_functions.cpp -o test_light_attack
 	./test_light_attack
+
+test_check_input: check_input.cpp test_check_input.cpp
+	g++ check_input.cpp test_check_input.cpp -o test_check_input
+	./test_check_input
 	
