@@ -7,6 +7,7 @@
 
 using namespace std;
 
+//light attack returns a random damage output depending on the move type of the opponenet
 int light_attack(int counter_move_type){
     srand((unsigned)time(0));
     int damage;
@@ -25,6 +26,8 @@ int light_attack(int counter_move_type){
     return damage;
 }
 
+//defend returns a random damage output depending on the move type of the opponenet
+int light_attack(int counter_move_type){
 int defend(int counter_move_type){
     srand((unsigned)time(0));
     int damage;
@@ -43,6 +46,8 @@ int defend(int counter_move_type){
     return damage;
 }
 
+//heavy attack returns a random damage output depending on the move type of the opponenet
+int light_attack(int counter_move_type){
 int heavy_attack(int counter_move_type, Character * User){
     srand((unsigned)time(0));
     int damage;
@@ -58,12 +63,13 @@ int heavy_attack(int counter_move_type, Character * User){
     if (counter_move_type == 3){
         damage = (rand()%20) + 30;
     }
-
+    //set heavy recharge time to 2 to not allow heavy attakc to be used twice in a row
     User->heavy_recharge_time = User->heavy_recharge_time + 2;
 
     return damage;
 }
 
+// do_move will call one of the 3 basic move functions based on an input move type
 int do_move(int move_type, int counter_move_type, Character * User){
     int damage;
     if (move_type == 1){
