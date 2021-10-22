@@ -83,7 +83,7 @@ string print_move(int move_type){
     if (move_type == 1){
         move_name = "light attack";
     }
-    else if (move_type == 1){
+    else if (move_type == 2){
         move_name = "defend";
     }
     else if (move_type == 3){
