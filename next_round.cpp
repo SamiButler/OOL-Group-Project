@@ -70,10 +70,16 @@ extern int heavy_attack(int counter_move_type);
 		cout << Opponent.name << ": " << Opponent.hitpoints << "hp" << endl << endl;
 		win_or_lose = false;	
 		}
-		else if (User->hitpoints <= 0 && Opponent.hitpoints <=0)			// When both players die on the same turn,
+		else if (User->hitpoints <= 0 && Opponent.hitpoints <=0 && User->hitpoints >= Opponent.hitpoints)			// When both players die on the same turn,
 		{																// the user will win by 1hp.
 		cout << User->name << ": 1hp" << endl;
 		cout << Opponent.name << ": 0hp" << endl << endl;
+		}
+		else if (User->hitpoints <= 0 && Opponent.hitpoints <=0 && User->hitpoints < Opponent.hitpoints)			// When both players die on the same turn,
+		{																// the opponent will win by 1hp.
+		cout << User->name << ": 0hp" << endl;
+		cout << Opponent.name << ": 1hp" << endl << endl;
+		win_or_lose = false;
 		}
 
 		delete User_Move;	// Delete UserMove for next attack.
