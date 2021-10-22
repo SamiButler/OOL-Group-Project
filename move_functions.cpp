@@ -71,7 +71,7 @@ int do_move(int move_type, int counter_move_type, Character * User){
         damage = defend(counter_move_type);
     }
     if (move_type == 3){
-        damage = heavy_attack(counter_move_type);
+        damage = heavy_attack(counter_move_type, User);
     }
     return damage;
 }
