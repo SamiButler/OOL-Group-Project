@@ -5,7 +5,7 @@
 #include "Character.h"
 #include "Move.h"
 
-int light_attack(int counter_move_type, Character * User){
+int light_attack(int counter_move_type){
     srand((unsigned)time(0));
     int damage;
     
@@ -23,7 +23,7 @@ int light_attack(int counter_move_type, Character * User){
     return damage;
 }
 
-int defend(int counter_move_type, Character * User){
+int defend(int counter_move_type){
     srand((unsigned)time(0));
     int damage;
     
