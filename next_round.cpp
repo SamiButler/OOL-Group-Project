@@ -18,7 +18,7 @@ extern int heavy_attack(int counter_move_type);
 
 	cout << "This fight is between " << User->name << " and " << Opponent.name << endl << endl << "GOOD LUCK!" << endl << endl;
 	User->heavy_recharge_time = 0;
-	User->special_recharge_time = 0;
+	//User->special_recharge_time = 0;
 	while (User->hitpoints > 0 && Opponent.hitpoints > 0)
 	{
 		Move* User_Move = new Move; // Create UserMove.
