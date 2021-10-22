@@ -27,7 +27,6 @@ int light_attack(int counter_move_type){
 }
 
 //defend returns a random damage output depending on the move type of the opponenet
-int light_attack(int counter_move_type){
 int defend(int counter_move_type){
     srand((unsigned)time(0));
     int damage;
@@ -47,7 +46,6 @@ int defend(int counter_move_type){
 }
 
 //heavy attack returns a random damage output depending on the move type of the opponenet
-int light_attack(int counter_move_type){
 int heavy_attack(int counter_move_type, Character * User){
     srand((unsigned)time(0));
     int damage;
