@@ -42,7 +42,7 @@ extern int heavy_attack(int counter_move_type);
 		// }
 		User->hitpoints = User->hitpoints - do_move(Opponent_Move->computer_move_type, User_Move->move_type, User);
 		if(Opponent_Move->computer_move_type != 2){
-			User->hitpoints = User->hitpoints - 10;
+			User->hitpoints = User->hitpoints - 5;
 		}
 		if (Opponent_Move->computer_move_type == 3){
 			User->heavy_recharge_time = User->heavy_recharge_time - 2;
