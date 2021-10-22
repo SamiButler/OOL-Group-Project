@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 extern bool check_input(string input, int numOpts);
 
 int main(){
