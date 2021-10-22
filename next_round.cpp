@@ -11,6 +11,7 @@ extern int do_move(int move_type, int counter_move_type, Character * User);
 extern int light_attack(int counter_move_type);
 extern int defend(int counter_move_type);
 extern int heavy_attack(int counter_move_type);
+extern string print_move(int move_type);
 
  bool next_round(Character* User, Character Opponent)
 {
@@ -53,7 +54,7 @@ extern int heavy_attack(int counter_move_type);
 			User->heavy_recharge_time--;
 		}
 		
-		cout << User->name << " attacked with " << User_Move->move_type << " and " << Opponent.name << " attacked with " << Opponent_Move->computer_move_type << "." << endl; 
+		cout << User->name << " attacked with " << print_move(User_Move->move_type) << " and " << Opponent.name << " attacked with " << print_move(Opponent_Move->computer_move_type) << "." << endl; 
 		
 		if (User->hitpoints > 0 && Opponent.hitpoints > 0)				// Both players hitpoints > 0.
 		{

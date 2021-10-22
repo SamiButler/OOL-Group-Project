@@ -75,3 +75,17 @@ int do_move(int move_type, int counter_move_type, Character * User){
     }
     return damage;
 }
+
+string print_move(int move_type){
+    string move_name;
+    if (move_type == 1){
+        move_name = "light attack";
+    }
+    else if (move_type == 1){
+        move_name = "defend";
+    }
+    else if (move_type == 3){
+        move_name = "heavy attack";
+    }
+    return move_name;
+}
