@@ -11,6 +11,14 @@ test_light_attack: test_light_attack.cpp Character.cpp Move.cpp move_functions.c
 	g++ test_light_attack.cpp Character.cpp Move.cpp move_functions.cpp -o test_light_attack
 	./test_light_attack
 
+test_defend: test_defend.cpp Character.cpp Move.cpp move_functions.cpp
+	g++ test_defend.cpp Character.cpp Move.cpp move_functions.cpp -o test_defend
+	./test_defend
+
+test_heavy_attack: test_heavy_attack.cpp Character.cpp Move.cpp move_functions.cpp
+	g++ test_heavy_attack.cpp Character.cpp Move.cpp move_functions.cpp -o test_heavy_attack
+	./test_heavy_attack
+
 test_check_input: check_input.cpp test_check_input.cpp
 	g++ check_input.cpp test_check_input.cpp -o test_check_input
 	./test_check_input
