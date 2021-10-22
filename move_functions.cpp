@@ -5,6 +5,8 @@
 #include "Character.h"
 #include "Move.h"
 
+using namespace std;
+
 int light_attack(int counter_move_type){
     srand((unsigned)time(0));
     int damage;
