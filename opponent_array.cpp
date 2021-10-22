@@ -14,7 +14,9 @@ Character* opponent_array(Character user, int* random_array)
 	string temp_name_array[4];
 	int count;
 
-	// The following if/else statements sort the character names into an array.
+	// The following if/else statements sort the character names into an array based on the 
+	// user's character selection, thus ensuring they never fight their own character.
+	
 	if (user.name == "Scott Pilgrim")
 	{
 		count = 0;
