@@ -1,0 +1,148 @@
+﻿Sami Butler(a1627658) - Jake Rutter(a1827369) - Joe Harvey(a1826395)
+
+
+Major Practical Design
+
+
+Project Description
+Our group’s program runs a simple text-based fighting game in the command line. It will progress through a range of stages that will allow for user input that affects the program in different ways, such as allowing them to select a character and moves. Based on what inputs the user provides as well as those of the computer (where appropriate), the program will output the various stats relevant to each portion of the game, such as player HP, the opponent character’s name, as well as a description of the moves selected by both. By iterating this process, a fairly substantial gameplay loop will be experienced by the player.
+
+
+This program will incorporate assessment elements to enhance its functioning as well as challenge group members’ programming knowledge. Below is an overview of how some of the assessment concepts have been implemented. 
+
+
+
+
+ASSESSMENT CONCEPT IMPLEMENTATION
+     1. Memory allocation from the stack and the heap
+   * Arrays - Much of the data structure used throughout the game is based on a variety of arrays, both static and dynamic, such as the randomly generated order of opponents
+
+
+   * Strings - A great majority of the UI elements as well as printed outputs throughout the program are strings, including intro and outro messages as well as incremental player stat updates. Strings are also used as the data type for user inputs
+
+
+   * Objects - Most of the core structures of the program are constructed with objects, including the characters, and some elements of the moves
+
+
+1. User Input and Output
+   * I/O of different data types - While most of the user input is of string data type, the various instances of outputs throughout the program do have some range of data types. For every round, there are multiple output instances that output object attributes formatted embedded within a string-based sentence
+
+
+2. Object-oriented programming and design
+   * Inheritance
+   * Polymorphism
+   * Abstract Classes
+3. Testing
+   * Test Inputs / Expected Outputs
+   * Automated Testing - Multiple sections of our makefile are designed to test various elements of the program, which can each be run and tested
+   * Regression Testing
+
+
+
+
+        
+WEEKLY PLANNING
+
+
+Week 10: Create the code for each of the classes, and ensure that there are no issues with any of their designs, as well as a basic round structure code. (two people on classes,  on round structure).
+
+
+Week 11: Integrate the classes into the gameplay system.Test how effectively the round gameplay works, and whether each move type and player matchup works as intended. (divide matchups between group members.)
+
+
+
+
+WEEKLY PLANNING (AS OF WEEK 11)
+After a few weeks of development, the overall structure of the gameplay loop seems to be operating at a reasonable level of functionality, however there are still some elements of the program design that can be improved, particularly the method that we will use to implement the character attributes as well as the special move function. We plan to change the current design of the characters (which makes the implementation of unique special moves quite challenging), and create a purely abstract character class that will produce subclasses that can each have their own virtual attributes as well as unique special moves.
+
+
+Along with this redesign, some of the more minor UI changes have also been implemented throughout to ensure the program has a more completed feel about it.
+
+
+________________
+
+
+
+
+
+
+TESTING STRATEGY
+Most of the testing we plan to implement will be unit testing, which is evident in the design of our makefile, which is structured by each smaller component of the system. In earlier testing, we will focus on the individual components of the system, and then move into a more integration testing method to see how the elements work as a whole system.
+
+
+TESTING (WEEK 11 UPDATE) 
+As of the final week of development before submission, we plan to create various test files to ensure the various elements of the game are working properly, such as the systems that stop the player from using the special attack more than the allocated quantity, and using the heavy attack too soon after its recharge time is still in effect. 
+
+
+
+
+
+
+
+
+
+
+________________
+
+
+Makefile
+
+
+full_game: Characters.cpp Move.cpp Light_attack.cpp Heavy_attack.cpp Defend.cpp Special_attack.cpp main.cpp
+        clear
+        clang++ Characters.cpp Move.cpp Light_attack.cpp Heavy_attack.cpp Defend.cpp Special_attack.cpp main.cpp -o full_game
+        ./full_game
+
+
+Characters_test: Characters.cpp Characters_driver.cpp
+        clang++ Characters.cpp Characters_driver.cpp -o Characters_test
+        ./Characters_test
+
+
+Move_test: Move.cpp Move_driver.cpp
+        clang++ Move.cpp Move_driver.cpp -o Move_test
+        ./Move_test
+
+
+Light_attack_test: Light_attack.cpp Light_attack_driver.cpp
+        clang++ Light_attack.cpp Light_attack_driver.cpp -o Light_attack_test
+        ./Light_attack_test
+
+
+Heavy_attack_test: Heavy_attack.cpp Heavy_attack_driver.cpp
+        clang++ Heavy_attack.cpp Heavy_attack_driver.cpp -o Heavy_attack_test
+        ./Heavy_attack_test
+
+
+Defend_test: Defend.cpp Defend_driver.cpp
+        clang++ Defend.cpp Defend_driver.cpp -o Defend_test
+        ./Defend_test
+
+
+Special_attack_test: Special_attack.cpp Special_attack_driver.cpp
+        clang++ Special_attack.cpp Special_attack_driver.cpp -o Special_attack_test
+        ./Special_attack_test
+
+
+
+
+How the game works:
+
+
+You begin by choosing a character out of:
+
+
+1. Scott Pilgrim (snitch)
+2. Tony Montana (thug)
+3. Skinny Pete (skinny)
+4. Dirty Harry (cop)
+5. Chuck Norris (all-rounder)
+
+
+You then play 4 rounds facing off against the other 4 characters and if you pass all of these stages, you face the final boss (The Godfather). If you defeat the final boss, you win the game and are the king of the streets.
+
+
+GitHub repository: 
+
+
+https://github.com/SamiButler/OOP-Group-Project.git

@@ -1,0 +1,136 @@
+Sami Butler(a1627658) - Jake Rutter(a1827369) - Joe Harvey(a1826395)
+
+Major Practical Design
+
+Project Description
+Class Character will contain the name, health points and other variables relating to the character. This class will act as a parent class to the move class which will contain the information for each move.
+
+Classes
+
+class Character
+{
+public:
+	character();
+	string name;
+	int hitpoints;
+	static int stun_counter;
+	choose_character();
+	set_character_ID();
+		character_ID = floor(rand)*5 + 1;
+	find_matchup();
+	{
+		Next_opponent.character_ID == 1 // This definitely is not the right code at this 
+        // stage, but it gets the idea across.
+}
+
+Private:
+	int character_ID;
+	int* ID_array[4];
+	Int used_IDs[4];
+	Int ID_counter;
+};
+
+
+class Move 	//Parent class for all attack classes.
+{
+Public:
+	Int heavy_recharge_time;
+	Int special_recharge_time;
+	
+};
+
+class Light_Attack : public Move
+{
+
+};
+
+
+class Heavy_Attack : public Move
+{
+
+};
+
+
+class Defend : public Move
+{
+
+};
+
+class Special_Attack : public Move
+{
+
+};
+
+WEEKLY PLANNING
+
+Week 10: Create the code for each of the classes, and ensure that there are no issues with any of their designs, as well as a basic round structure code. (two people on classes,  on round structure).
+
+Week 11: Integrate the classes into the gameplay system.Test how effectively the round gameplay works, and whether each move type and player matchup works as intended. (divide matchups between group members.)
+
+
+
+WEEKLY PLANNING (AS OF WEEK 11)
+After a few weeks of development, the overall structure of the gameplay loop seems to be operating at a reasonable level of functionality, however there are still some elements of the program design that can be improved, particularly the method that we will use to implement the character attributes as well as the special move function. We plan to change the current design of the characters (which makes the implementation of unique special moves quite challenging), and create a purely abstract character class that will produce subclasses that can each have their own virtual attributes as well as unique special moves.
+
+Along with this redesign, some of the more minor UI changes have also been implemented throughout to ensure the program has a more completed feel about it.
+
+
+
+TESTING STRATEGY
+Most of the testing we plan to implement will be unit testing, which is evident in the design of our makefile, which is structured by each smaller component of the system. In earlier testing, we will focus on the individual components of the system, and then move into a more integration testing method to see how the elements work as a whole system.
+
+TESTING (WEEK 11 UPDATE) 
+As of the final week of development before submission, we plan to create various test files to ensure the various elements of the game are working properly, such as the systems that stop the player from using the special attack more than the allocated quantity, and using the heavy attack too soon after its recharge time is still in effect. 
+
+
+
+
+
+
+Makefile
+
+full_game: Characters.cpp Move.cpp Light_attack.cpp Heavy_attack.cpp Defend.cpp Special_attack.cpp main.cpp
+	clear
+	clang++ Characters.cpp Move.cpp Light_attack.cpp Heavy_attack.cpp Defend.cpp Special_attack.cpp main.cpp -o full_game
+	./full_game
+
+Characters_test: Characters.cpp Characters_driver.cpp
+	clang++ Characters.cpp Characters_driver.cpp -o Characters_test
+	./Characters_test
+
+Move_test: Move.cpp Move_driver.cpp
+	clang++ Move.cpp Move_driver.cpp -o Move_test
+	./Move_test
+
+Light_attack_test: Light_attack.cpp Light_attack_driver.cpp
+	clang++ Light_attack.cpp Light_attack_driver.cpp -o Light_attack_test
+	./Light_attack_test
+
+Heavy_attack_test: Heavy_attack.cpp Heavy_attack_driver.cpp
+	clang++ Heavy_attack.cpp Heavy_attack_driver.cpp -o Heavy_attack_test
+	./Heavy_attack_test
+
+Defend_test: Defend.cpp Defend_driver.cpp
+	clang++ Defend.cpp Defend_driver.cpp -o Defend_test
+	./Defend_test
+
+Special_attack_test: Special_attack.cpp Special_attack_driver.cpp
+	clang++ Special_attack.cpp Special_attack_driver.cpp -o Special_attack_test
+	./Special_attack_test
+
+
+How the game works:
+
+You begin by choosing a character out of:
+
+Scott Pilgrim (snitch)
+Tony Montana (thug)
+Skinny Pete (skinny)
+Dirty Harry (cop)
+Chuck Norris (all-rounder)
+
+You then play 4 rounds facing off against the other 4 characters and if you pass all of these stages, you face the final boss (The Godfather). If you defeat the final boss, you win the game and are the king of the streets.
+
+GitHub repository: 
+
+https://github.com/SamiButler/OOP-Group-Project.git

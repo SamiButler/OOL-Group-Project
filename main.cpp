@@ -82,7 +82,7 @@ int main()				// So far use 'make check_intro' to test this.
 		}
 	}
 
-	cout << "Nice one - you have beaten all of the opponenets and are now the undisputed king of the streetz. All will bow down to you and kiss your feet. Mwah mwah mwah" << endl;
+	cout << "Nice one - you have beaten all of the opponents and are now the undisputed king of the streetz. All will bow down to you and kiss your feet. Mwah mwah mwah" << endl;
 	cout << endl << "THE END - THANKS FOR PLAYING" << endl;
 
 	delete[] opponents_array;
