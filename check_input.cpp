@@ -24,7 +24,3 @@ bool check_input(string input, int numOpts){
 	
 	return status;
 }
-
-
-
-
