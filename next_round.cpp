@@ -44,7 +44,7 @@ extern int heavy_attack(int counter_move_type);
 		// if (Opponent_Move->move_type == 4){
 		// 	User->hitpoints = User->hitpoints - Opponent.special_attack();
 		// }
-		User->hitpoints = User->hitpoints - do_move(Opponent_Move->computer_move_type, User_Move->move_type, *Opponent);
+		User->hitpoints = User->hitpoints - do_move(Opponent_Move->computer_move_type, User_Move->move_type, User);
 		
 		cout << User->name << " attacked with " << User_Move->move_type << " and " << Opponent.name << " attacked with " << Opponent_Move->computer_move_type << "." << endl; 
 		
