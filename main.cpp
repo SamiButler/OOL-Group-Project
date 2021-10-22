@@ -71,7 +71,7 @@ int main()				// So far use 'make check_intro' to test this.
 		victory = next_round(User, opponents_array[match]);
 		if (victory == false)
 		{
-			cout << "Game over - you died!! Better luck next time." << endl;
+			cout << "Game over - you died!! Better luck next time. PS - you suck." << endl;
 			delete[] opponents_array;
 			return 0;
 		}
