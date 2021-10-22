@@ -7,7 +7,7 @@
 
 using namespace std;
 
-extern int do_move(int move_type, int counter_move_type);
+extern int do_move(int move_type, int counter_move_type, Character * User);
 extern int light_attack(int counter_move_type);
 extern int defend(int counter_move_type);
 extern int heavy_attack(int counter_move_type);
