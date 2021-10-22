@@ -11,13 +11,15 @@ extern int do_move(int move_type, int counter_move_type, Character * User);
 extern int light_attack(int counter_move_type);
 extern int defend(int counter_move_type);
 extern int heavy_attack(int counter_move_type);
+extern string print_move(int move_type);
 
  bool next_round(Character* User, Character Opponent)
 {
 	bool win_or_lose = true;
 
 	cout << "This fight is between " << User->name << " and " << Opponent.name << endl << endl << "GOOD LUCK!" << endl << endl;
-
+	User->heavy_recharge_time = 0;
+	//User->special_recharge_time = 0;
 	while (User->hitpoints > 0 && Opponent.hitpoints > 0)
 	{
 		Move* User_Move = new Move; // Create UserMove.
@@ -40,7 +42,10 @@ extern int heavy_attack(int counter_move_type);
 		// if (Opponent_Move->move_type == 4){
 		// 	User->hitpoints = User->hitpoints - Opponent.special_attack();
 		// }
-		User->hitpoints = User->hitpoints - do_move(Opponent_Move->computer_move_type, User_Move->move_type, User) - 10;
+		User->hitpoints = User->hitpoints - do_move(Opponent_Move->computer_move_type, User_Move->move_type, User);
+		if(Opponent_Move->computer_move_type != 2){
+			User->hitpoints = User->hitpoints - 2;
+		}
 		if (Opponent_Move->computer_move_type == 3){
 			User->heavy_recharge_time = User->heavy_recharge_time - 2;
 		}
@@ -49,7 +54,7 @@ extern int heavy_attack(int counter_move_type);
 			User->heavy_recharge_time--;
 		}
 		
-		cout << User->name << " attacked with " << User_Move->move_type << " and " << Opponent.name << " attacked with " << Opponent_Move->computer_move_type << "." << endl; 
+		cout << User->name << " attacked with " << print_move(User_Move->move_type) << " and " << Opponent.name << " attacked with " << print_move(Opponent_Move->computer_move_type) << "." << endl; 
 		
 		if (User->hitpoints > 0 && Opponent.hitpoints > 0)				// Both players hitpoints > 0.
 		{
@@ -67,10 +72,16 @@ extern int heavy_attack(int counter_move_type);
 		cout << Opponent.name << ": " << Opponent.hitpoints << "hp" << endl << endl;
 		win_or_lose = false;	
 		}
-		else if (User->hitpoints <= 0 && Opponent.hitpoints <=0)			// When both players die on the same turn,
+		else if (User->hitpoints <= 0 && Opponent.hitpoints <=0 && User->hitpoints >= Opponent.hitpoints)			// When both players die on the same turn,
 		{																// the user will win by 1hp.
 		cout << User->name << ": 1hp" << endl;
 		cout << Opponent.name << ": 0hp" << endl << endl;
+		}
+		else if (User->hitpoints <= 0 && Opponent.hitpoints <=0 && User->hitpoints < Opponent.hitpoints)			// When both players die on the same turn,
+		{																// the opponent will win by 1hp.
+		cout << User->name << ": 0hp" << endl;
+		cout << Opponent.name << ": 1hp" << endl << endl;
+		win_or_lose = false;
 		}
 
 		delete User_Move;	// Delete UserMove for next attack.
