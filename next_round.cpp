@@ -33,8 +33,8 @@ extern int heavy_attack(int counter_move_type);
 		// 	Opponent.hitpoints = Opponent.hitpoints - User->special_attack();
 		// }
 		User->hitpoints = User->hitpoints - do_move(User_Move->move_type, Opponent_Move->computer_move_type);
-		if (User->heavy_attack_recharge > 0){
-			User->heavy_attack_recharge--;
+		if (User->heavy_recharge_time > 0){
+			User->heavy_recharge_time--;
 		}
 
 		//if (User->special_attack_recharge > 0){

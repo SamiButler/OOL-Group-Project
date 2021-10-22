@@ -57,7 +57,7 @@ int heavy_attack(int counter_move_type, Character * User){
         damage = (rand()%20) + 30;
     }
 
-    User->heavy_attack_recharge = User->heavy_attack_recharge + 1;
+    User->heavy_recharge_time = User->heavy_recharge_time + 1;
 
     return damage;
 }
